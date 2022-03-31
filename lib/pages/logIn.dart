@@ -8,6 +8,7 @@ import '../widget/textformfield.dart';
 import 'map.dart';
 import 'signUp.dart';
 
+// ignore: must_be_immutable
 class LogIn extends StatelessWidget {
    LogIn({ Key? key }) : super(key: key);
 final formkey=GlobalKey<FormState>();
@@ -29,25 +30,33 @@ TextEditingController phoneController=TextEditingController();
             const Center(child: Text('Login to your account')),
             const SizedBox(height: 10,),
            TextFormFieldWidget(
+             textInputType: TextInputType.number,
              validator: (value){
                if(value!.isEmpty){
                  return "Check your phone number";
-               }return null;
+               }else if(value.length<10 || value.length>12 ){
+                 return 'Please check your input';
+               }
+               return null;
              },
              controller: phoneController,
              labelText: 'Phone'),
+             const SizedBox(height: 10,),
             elevatedButton(child:const Text('LogIn'),onpressed: ((){
               if(formkey.currentState!.validate()){
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('processing')));
               Navigator.push(context, MaterialPageRoute(builder: (context)=>const Home()));
               }
-            Row(children: [
-              const Text('Already have an account?'),
-              textButton(
-                onPressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=> SignUp())), child: const Text('SignUp'))
-            ],);
             })
          ),
+         Center(key: key,
+                  child: Row(
+                    children: [
+                     const SizedBox(width: 95),
+                    const Text('Already have an account?'),
+                    textButton(onPressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUp())), child:const Text('SignUp'))
+                  ],),
+                )
             ]),
     ))));
   }

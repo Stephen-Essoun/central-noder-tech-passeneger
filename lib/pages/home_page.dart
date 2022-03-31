@@ -1,11 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:last_cc/pages/User.dart';
-import 'package:last_cc/pages/map.dart';
-
-import '../controller/location_controller.dart';
 import 'drawer.dart';
 
 class Home extends StatefulWidget {
@@ -29,8 +24,8 @@ class _HomeState extends State<Home> {
          centerTitle: true,
         title: Container(
           child:Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children:const  [
-              Text('Online'),
+                        
+                   children:     [ Text('Online'),
               Icon(Icons.local_taxi_rounded)
             ],
           ),
@@ -42,14 +37,14 @@ class _HomeState extends State<Home> {
         
          
         actions: [IconButton(onPressed: (){},
-         icon:const Icon(Icons.notifications))],
+         icon:const Icon(Icons.notifications_active_outlined))],
       ),
 
        drawer: Padding(
          padding: const EdgeInsets.all(8.0),
          child: SafeArea(child: drawer(context: context)),
        ),
-        body:MyHomePager()
+        // body:MyHomePager()
          );
   }
 }   

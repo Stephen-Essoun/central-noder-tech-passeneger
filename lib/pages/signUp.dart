@@ -8,6 +8,7 @@ import '../widget/textformfield.dart';
 import 'logIn.dart';
 import 'verify.dart';
 
+// ignore: must_be_immutable
 class SignUp extends StatelessWidget {
   SignUp({ Key? key }) : super(key: key);
 final _formkey = GlobalKey<FormState>();
@@ -30,6 +31,7 @@ TextEditingController confirmController=TextEditingController();
               child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
+                 SizedBox(height: 60),
                 Center(child: Text("Welcome,let's get started",style:Theme.of(context).textTheme.headline4,)),
                  SizedBox(height: 20),
                  TextFormFieldWidget(
@@ -77,14 +79,14 @@ TextEditingController confirmController=TextEditingController();
                    validator: (value){
                      if(value!.isEmpty){
                        return 'Comfirm password';
-                     }else if(!value.contains('${passwordController.text}')){
+                     }else if(!value.contains('$passwordController.text')){
                        return 'password do not match';
                      }
                      return null;
                        },
                    labelText: 'Confirm password'),
       
-                 SizedBox(height: 5,),
+                 SizedBox(height: 10,),
                  elevatedButton(onpressed: (){
                    if(_formkey.currentState!.validate()){
                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Enjoy your ride')));
@@ -96,7 +98,7 @@ TextEditingController confirmController=TextEditingController();
                 Center(key: key,
                   child: Row(
                     children: [
-                      SizedBox(width: 12),
+                      SizedBox(width: 95),
                     const Text('Already have an account?'),
                     textButton(onPressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>LogIn())), child:const Text('logIn'))
                   ],),

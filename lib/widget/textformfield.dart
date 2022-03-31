@@ -1,13 +1,14 @@
 
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class TextFormFieldWidget extends StatefulWidget {
   final TextInputType? textInputType;
-  
   final ValueChanged<String>? onChanged;
   final String? labelText;
   final TextEditingController? controller;
   final Function? functionValidate;
+  final bool? obscure;
   final String? parametersValidate;
   final TextInputAction? actionKeyboard;
   final Function? onSubmitField;
@@ -17,6 +18,7 @@ class TextFormFieldWidget extends StatefulWidget {
       // ignore: use_key_in_widget_constructors
        TextFormFieldWidget(
       {
+        this.obscure,
       this.labelText,
       this.onChanged,
       this.validator,

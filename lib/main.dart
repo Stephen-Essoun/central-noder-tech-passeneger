@@ -25,7 +25,7 @@ void main(){
       headline1: const TextStyle(fontFamily: 'AverialAa',fontSize:30),
       headline2: const TextStyle(fontFamily: 'AverialAa',fontSize:20),
       headline3: const TextStyle(fontFamily: 'AverialAa',fontSize:10),
-      headline4: const TextStyle(fontFamily: 'Oxygen',fontSize:15,fontWeight:FontWeight.bold),
+      headline4: const TextStyle(fontFamily: 'Oxygen',fontSize:25,fontWeight:FontWeight.bold),
 
       ),
     ),

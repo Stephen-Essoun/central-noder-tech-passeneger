@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:last_cc/pages/edit_page.dart';
 import 'package:last_cc/widget/buttons.dart';
 import 'package:last_cc/widget/textformfield.dart';
 class PersonDetail extends StatefulWidget {
@@ -9,6 +10,7 @@ class PersonDetail extends StatefulWidget {
 }
 
 class _PersonDetailState extends State<PersonDetail> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +19,7 @@ class _PersonDetailState extends State<PersonDetail> {
       iconTheme: const IconThemeData(color: Color.fromARGB(0, 255, 255, 255)) ,
       centerTitle: true,
       title:const Text("Profile",style: TextStyle(color: Colors.black)),
-      actions: [TextButton(onPressed: (){}, 
+      actions: [TextButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) =>const Editprofilepage()));}, 
       child:const Text("Edit"))],),
 
       body: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -29,14 +31,30 @@ class _PersonDetailState extends State<PersonDetail> {
         const SizedBox(height: 10,),
         Expanded(
           child: Container(height:MediaQuery.of(context).size.height,
-            color: Color.fromARGB(255, 255, 255, 255),
+            color: const Color.fromARGB(255, 255, 255, 255),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(children:  [
-                const ListTile(leading:Text('Name'),trailing: Padding(
-                  padding: EdgeInsets.only(right: 60),
-                  child: Text('Erasmus Farron'),
-                ),),
+                Padding(
+                  padding: const EdgeInsets.only(left: 15),
+                  child: Column(children: [
+                    Row(
+                      children:  [
+                        const Text('Name'),SizedBox(width: MediaQuery.of(context).size.width/3,),const Text('UserName'),
+                      ],
+                    ),
+                    Row(
+                      children:  [
+                        const Text('Name'),SizedBox(width: MediaQuery.of(context).size.width/3,),const Text('UserName'),
+                      ],
+                    ),
+                    Row(
+                      children:  [
+                        const Text('Name'),SizedBox(width: MediaQuery.of(context).size.width/3,),const Text('UserName'),
+                      ],
+                    ),
+                  ],),
+                ),
                 const SizedBox(height:10),
                 const Text('Password'),
                 const SizedBox(height:10),
@@ -54,4 +72,5 @@ class _PersonDetailState extends State<PersonDetail> {
       ],),
     );
   }
+
 }

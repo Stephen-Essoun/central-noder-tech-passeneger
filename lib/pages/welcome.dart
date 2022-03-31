@@ -15,12 +15,6 @@ class WelcomePage extends StatefulWidget {
 
 class _LogInState extends State<WelcomePage> {
 
-  GetUserGeoLocationController _geoLocationController=GetUserGeoLocationController();
-  @override
-  void initState() {
-  _geoLocationController.determinePosition();
-    super.initState();
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,10 +27,10 @@ class _LogInState extends State<WelcomePage> {
                 Center(child: Text('WELCOME',style: Theme.of(context).textTheme.headline1,)),
                 const SizedBox(height: 5,),
                 Center(child: Text('CODA Drive',style: Theme.of(context).textTheme.headline2)),
-                const SizedBox(height: 5,),
-                Container(height: MediaQuery.of(context).size.height/2,
+                const SizedBox(height: 10,),
+                Container(height: MediaQuery.of(context).size.height/3,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(15),
                   image: DecorationImage(image: AssetImage('images/cab.jpeg'),fit: BoxFit.cover))),
                 SizedBox(height: 50,),
                 elevatedButton(
