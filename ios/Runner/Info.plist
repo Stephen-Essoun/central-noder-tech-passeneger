@@ -26,6 +26,7 @@
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+    <string>pk.eyJ1IjoiMDU0NDUxMTU4MSIsImEiOiJjbDFlbjRjcmkwdDJ3M2RwM243OW9peHhsIn0.5NnXTVBG0rlfBnDV8UDDoA</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UISupportedInterfaceOrientations</key>
