@@ -8,6 +8,6 @@ TextButton textButton({
     FocusNode? focusNode,
     bool autofocus = false,
     Clip clipBehavior = Clip.none,
-    @required Widget? child,
+    @required String? child,
     }){return TextButton(onPressed: onPressed,
-     child: child!);}
+     child: Text(child!));}

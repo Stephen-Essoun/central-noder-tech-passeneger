@@ -3,8 +3,8 @@
 // import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:last_cc/controller/location_controller.dart';
+import 'package:last_cc/pages/signUp.dart';
 import 'drawer.dart';
 import 'map.dart';
 
@@ -42,7 +42,9 @@ class _HomeState extends State<Home> {
         ),
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: ((context) => SignUp())));
+              },
               icon: const Icon(Icons.notifications_active_outlined))
         ],
       ),
