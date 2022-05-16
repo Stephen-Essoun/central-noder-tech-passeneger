@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:last_cc/pages/welcome.dart';
+import 'package:last_cc/pages/OnbBoardingScreen.dart';
 
 class Splashscreen extends StatefulWidget {
   const Splashscreen({Key? key}) : super(key: key);
@@ -22,13 +22,11 @@ class _SplashscreenState extends State<Splashscreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.brown,
+    return const Scaffold(
+      backgroundColor: Colors.blueGrey,
       
         body: Center(
-      child: Container(
-        child: const Text('NODERTAPK'),
-      ),
+      child: Text('C',style: TextStyle(fontSize: 150,fontWeight: FontWeight.bold,fontFamily: 'Noto Sans CJK SC'),),
     ));
   }
 }

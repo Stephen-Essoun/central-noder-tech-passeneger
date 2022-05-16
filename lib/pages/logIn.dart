@@ -26,13 +26,13 @@ TextEditingController passwordController=TextEditingController();
             children: [ 
             Center(child: Text('Welcome Back',style: Theme.of(context).textTheme.headline4,)),
             const SizedBox(height: 50,),
-            const Center(child: Text('Login to your account')),
+            Center(child: Text('Login to your account',style: Theme.of(context).textTheme.headline6,)),
             const SizedBox(height: 10,),
            TextFormFieldWidget(
              textInputType: TextInputType.number,
              validator: (value){
                if(value!.isEmpty){
-                 return "Check your phone number";
+                 return "No phone number input";
                }else if(value.length<10 || value.length>12 ){
                  return 'Please check your input';
                }
@@ -40,7 +40,7 @@ TextEditingController passwordController=TextEditingController();
              },
              controller: phonenumberController,
              labelText: 'Phone'),
-             const SizedBox(height: 5,),
+             const SizedBox(height: 15,),
               TextFormFieldWidget(
              textInputType: TextInputType.number,
              validator: (value){
@@ -48,7 +48,7 @@ TextEditingController passwordController=TextEditingController();
                  return "No password entered";
                }return null;
              },
-             controller: phonenumberController,
+             controller: passwordController,
              labelText: 'password'),
              const SizedBox(height: 10,),
             elevatedButton(child:const Text('LogIn'),onpressed: ((){

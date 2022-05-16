@@ -45,8 +45,8 @@ class SignUpState extends State<SignUp> {
                   SizedBox(height: 60),
                   Center(
                       child: Text(
-                    "Welcome,let's get started",
-                    style: Theme.of(context).textTheme.headline4,
+                    "Welcome",
+                    style: Theme.of(context).textTheme.headline6,
                   )),
                   SizedBox(height: 20),
                   TextFormFieldWidget(
