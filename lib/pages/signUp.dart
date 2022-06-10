@@ -15,12 +15,13 @@ class SignUp extends StatefulWidget {
   @override
   State<SignUp> createState() => SignUpState();
 }
-
+ 
 class SignUpState extends State<SignUp> {
   final _formkey = GlobalKey<FormState>();
 
   TextEditingController firstnameController = TextEditingController();
-  TextEditingController secondnameController = TextEditingController();
+   
+  TextEditingController surnameController = TextEditingController();
 
   TextEditingController emailController = TextEditingController();
 
@@ -61,15 +62,15 @@ class SignUpState extends State<SignUp> {
                   SizedBox(
                     height: 20,
                   ),
-                   TextFormFieldWidget(
-                      controller: secondnameController,
+                  TextFormFieldWidget(
+                      controller: surnameController,
                       validator: (value) {
                         if (value!.isEmpty) {
-                          return 'Enter sencond name';
+                          return 'Enter second name';
                         }
                         return null;
                       },
-                      labelText: 'Second Name'),
+                      labelText: 'Surname'),
                   SizedBox(
                     height: 20,
                   ),
@@ -127,7 +128,11 @@ class SignUpState extends State<SignUp> {
                       onpressed: () async {
                         final prefs = await SharedPreferences.getInstance();
                         if (_formkey.currentState!.validate()) {
-                          prefs.setString('Name', firstnameController.text);
+                          prefs.setString(
+                            'firstname',
+                            firstnameController.text,
+                          );
+                          prefs.setString('surname', surnameController.text);
                           ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(content: Text('Enjoy your ride')));
                           Navigator.push(

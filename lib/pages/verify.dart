@@ -21,7 +21,7 @@ class VerifyAccount extends StatelessWidget {
             TextFormFieldWidget(labelText: ''),
             SizedBox(height: 10,),
             elevatedButton(onpressed: 
-            ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>const Home())),child: const Text('Verify'))
+            ()=>Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>Home()), (route) => false),child: const Text('Verify'))
           ],
         ),
       ),

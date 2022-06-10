@@ -1,54 +1,75 @@
 import 'package:flutter/material.dart';
 import 'package:last_cc/pages/User.dart';
-import 'package:last_cc/pages/logIn.dart';
 
-Drawer drawer({context}){
- 
+Drawer drawer({context}) {
   return Drawer(
     elevation: 2,
-    child: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(crossAxisAlignment:  CrossAxisAlignment.start,
-        children:  <Widget> [
-          const UserAccountsDrawerHeader(
-            currentAccountPicture:CircleAvatar(
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: const <Widget>[
+         UserAccountsDrawerHeader(
+            currentAccountPicture: CircleAvatar(
               radius: 50,
               backgroundColor: Colors.black,
-              ) ,
+            ),
             accountName: Text('Profile'),
-           accountEmail: Text('Profile')),
-        gesture(context:context,
-        child: Row(children:const [Icon(Icons.person),
-        SizedBox(width: 10,),Text('Profile')]),
-        page:const PersonDetail()), 
-        const SizedBox(height: 10,),
-        gesture(context:context,
-        child: Row(children:const [Icon(Icons.history),
-        SizedBox(width: 10,),Text('History')]),
-        page:null),
-        const SizedBox(height: 10,),
-         gesture(context:context,
-        child: Row(children:const [Icon(Icons.money),
-        SizedBox(width: 10,),Text('Wallet')]),
-        page:null),
-        const SizedBox(height: 10,),
-         gesture(context:context,
-        child: Row(children:const [Icon(Icons.share),
-        SizedBox(width: 10,),Text('Invite')]),
-        page:null),
-        const Divider(height: 20,thickness: 2,indent: 5,endIndent: 5,), gesture(context:context,
-        child: Row(children:const [Icon(Icons.logout),
-        SizedBox(width: 10,),Text('LogOut')]),
-        page:LogIn()),
-           
-          ],),
+            accountEmail: Text('Profile')),
+         DrawerListItems(
+          title: 'Profile',
+          icon: Icons.person,
+          route: PersonDetail(),
+        ),
+         DrawerListItems(
+          title: 'History',
+          icon: Icons.history,
+          route: null,
+        ),
+         DrawerListItems(
+          title: 'Wallet',
+          icon: Icons.money,
+          route: null,
+        ),
+         DrawerListItems(
+          title: 'Invite',
+          icon: Icons.share,
+          route: PersonDetail(),
+        ),
+         Divider(
+          height: 20,
+          thickness: 2,
+          indent: 5,
+          endIndent: 5,
+        ),
+         DrawerListItems(
+          title: 'LogOut',
+          icon: Icons.logout,
+          route: null,
+        ),
+      ],
     ),
   );
 }
 
-GestureDetector gesture({context,page,child}) {
-  return GestureDetector(
-            onTap: (){Navigator.push(context,
-             MaterialPageRoute(builder: ((context) => page)));},
-            child: child);
+class DrawerListItems extends StatelessWidget {
+  const  DrawerListItems({
+    required this.icon,
+    required this.route,
+    required this.title,
+    Key? key,
+  }) : super(key: key);
+  final String title;
+  final IconData icon;
+  final Widget? route;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: Icon(icon),
+      title: Text(title),
+      onTap: () {
+        Navigator.pop(context);
+        Navigator.push(context, MaterialPageRoute(builder: (context) => route!));
+      },
+    );
+  }
 }

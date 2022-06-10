@@ -1,8 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:last_cc/pages/home_page.dart';
-import 'package:last_cc/pages/signUp.dart';
+import 'package:last_cc/pages/logIn.dart';
 import 'package:last_cc/widget/textbutton.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -79,13 +78,13 @@ class _LogInState extends State<WelcomePage> {
                     '   You have the access\n to order for ABOBOYAA\n   to pick up your goods',
               ),
               buildPage(
-                color: Colors.blue.shade300,
+                color: Colors.pink.shade300,
                 assetImage: 'images/pra1.jpg',
                 title: 'Pragya',
                 subtitle: 'Do you want to explore with low cost?\n              Just book for Pragyea.',
               ),
               buildPage(
-                color: Colors.blueGrey.shade300,
+                color: Colors.pink.shade300,
                 assetImage: 'images/cd1.png',
                 title: 'CODA cab',
                 subtitle: 'Welcome',
@@ -97,7 +96,7 @@ class _LogInState extends State<WelcomePage> {
             ? SizedBox(
               height: 80,width:900,
                 child: Center(child: textButton(onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUp()));
+                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>LogIn()), (route) => false);
                 }, child: 'Get Started',style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blue)) 
                 )))
               

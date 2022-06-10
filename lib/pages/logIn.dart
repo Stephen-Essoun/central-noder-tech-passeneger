@@ -62,8 +62,8 @@ TextEditingController passwordController=TextEditingController();
                   child: Row(
                     children: [
                      const SizedBox(width: 95),
-                    const Text('Already have an account?'),
-                    textButton(onPressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>const SignUp())), child:'SignUp')
+                    const Text("Don't have an account?"),
+                    textButton(onPressed: ()=>Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>const SignUp()), (route) => false),child:'SignUp')
                   ],),
                 )
             ]),

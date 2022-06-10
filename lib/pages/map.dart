@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
     recentlocations.add(_whereto);
 
     setState(() {
-      userName = prefs.getString("Name");
+      userName = prefs.getString("firstname");
     });
   }
 
@@ -107,9 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 controller: _controller,
                 draggableBody: true,
                 headerBar: Container(
-                  height: 40,
-                  color: Colors.blueAccent,
-                  child: const Center(child: Text('Save Journey')),
+                  height: 0,
                 ),
                 body: SingleChildScrollView(
                   child: Padding(
@@ -126,7 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         const SizedBox(
                           height: 10,
                         ),
-                        const Text('Where to?'),
+                        const Text('Where to?',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
                         const SizedBox(
                           height: 5,
                         ),
@@ -163,7 +161,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ChoiceChip choiceChip = ChoiceChip(
         selected: _selectedIndex == i,
         label: Text(_options[i], style: const TextStyle(color: Colors.white)),
-        avatar: FlutterLogo(),
+        avatar:const FlutterLogo(),
         elevation: 10,
         pressElevation: 5,
         shadowColor: const Color.fromARGB(255, 37, 46, 45),

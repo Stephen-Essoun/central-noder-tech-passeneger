@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -14,23 +13,21 @@ class TextFormFieldWidget extends StatefulWidget {
   final Function? onSubmitField;
   final Function? onFieldTap;
   String? Function(String?)? validator;
-  
 
-      // ignore: use_key_in_widget_constructors
-       TextFormFieldWidget(
-      {
-        this.obscure,
-      this.labelText,
-      this.onChanged,
-      this.validator,
-      this.textInputType,
-      this.controller,
-      this.functionValidate,
-      this.parametersValidate,
-      this.actionKeyboard = TextInputAction.next,
-      this.onSubmitField,
-      this.onFieldTap,
-      });
+  // ignore: use_key_in_widget_constructors
+  TextFormFieldWidget({
+    this.obscure,
+    this.labelText,
+    this.onChanged,
+    this.validator,
+    this.textInputType,
+    this.controller,
+    this.functionValidate,
+    this.parametersValidate,
+    this.actionKeyboard = TextInputAction.next,
+    this.onSubmitField,
+    this.onFieldTap,
+  });
 
   @override
   _TextFormFieldWidgetState createState() => _TextFormFieldWidgetState();
@@ -43,10 +40,10 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
   Widget build(BuildContext context) {
     return Theme(
       data: Theme.of(context).copyWith(
-        primaryColor:Theme.of(context).primaryColor,
+        primaryColor: Theme.of(context).primaryColor,
       ),
       child: TextFormField(
-        cursorColor:Theme.of(context).primaryColor,
+        cursorColor: Theme.of(context).primaryColor,
         keyboardType: widget.textInputType,
         textInputAction: widget.actionKeyboard,
         style: TextStyle(
@@ -60,8 +57,8 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
           labelText: widget.labelText,
           // ignore: prefer_const_constructors
           enabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color:Color.fromARGB(178, 158, 158, 158))
-          ),
+              borderSide:
+                  const BorderSide(color: Color.fromARGB(178, 158, 158, 158))),
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Theme.of(context).primaryColor),
           ),
@@ -82,7 +79,8 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
             letterSpacing: 1.2,
           ),
           errorBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Theme.of(context).secondaryHeaderColor),
+            borderSide:
+                BorderSide(color: Theme.of(context).secondaryHeaderColor),
           ),
           focusedErrorBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Theme.of(context).primaryColor),
