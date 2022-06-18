@@ -1,11 +1,12 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:last_cc/service/database.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../widget/buttons.dart';
 import '../widget/textbutton.dart';
 import '../widget/textformfield.dart';
-import 'logIn.dart';
+import 'signin.dart';
 import 'verify.dart';
 
 // ignore: must_be_immutable
@@ -30,6 +31,8 @@ class SignUpState extends State<SignUp> {
   TextEditingController passwordController = TextEditingController();
 
   TextEditingController confirmController = TextEditingController();
+
+  DbService dbService = DbService();
 
   @override
   Widget build(BuildContext context) {
@@ -128,6 +131,8 @@ class SignUpState extends State<SignUp> {
                       onpressed: () async {
                         final prefs = await SharedPreferences.getInstance();
                         if (_formkey.currentState!.validate()) {
+                          dbService.updateUser(firstname: firstnameController.text, surname: surnameController.text, email: emailController.text, phoneNumber: phoneController.text);
+                        
                           prefs.setString(
                             'firstname',
                             firstnameController.text,

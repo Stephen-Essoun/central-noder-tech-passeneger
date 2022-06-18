@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "749110442823",
+    "project_id": "yenko-ad45d",
+    "storage_bucket": "yenko-ad45d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749110442823:android:0c94b3759e7a14344aea62",
+        "android_client_info": {
+          "package_name": "com.nodertapk.last_cc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "749110442823-2kflh3vcrglt25sq2qfh77pclkkn70jf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nodertapk.last_cc",
+            "certificate_hash": "f8aae47ef42bc6e7bb868a6bf5c051e071115b9e"
+          }
+        },
+        {
+          "client_id": "749110442823-prdtei9ef6su8ps3nv37n983fe6539cg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcP_83pAi74GkHCK6MTnE-bHY-7llsKXM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "749110442823-prdtei9ef6su8ps3nv37n983fe6539cg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

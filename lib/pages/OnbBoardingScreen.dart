@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:last_cc/pages/logIn.dart';
+import 'package:last_cc/pages/signin.dart';
 import 'package:last_cc/widget/textbutton.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 

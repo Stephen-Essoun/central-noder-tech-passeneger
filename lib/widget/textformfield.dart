@@ -62,10 +62,10 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Theme.of(context).primaryColor),
           ),
-          hintStyle: const TextStyle(
+          labelStyle: const TextStyle(
             color: Colors.grey,
             fontSize: 14.0,
-            fontWeight: FontWeight.w300,
+            fontWeight: FontWeight.w500,
             fontStyle: FontStyle.normal,
             letterSpacing: 1.2,
           ),
