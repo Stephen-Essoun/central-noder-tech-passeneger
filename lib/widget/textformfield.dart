@@ -48,17 +48,16 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
         textInputAction: widget.actionKeyboard,
         style: TextStyle(
           color: Theme.of(context).secondaryHeaderColor,
-          fontSize: 10.0,
-          fontWeight: FontWeight.w200,
+          fontSize: 12.0,
+          fontWeight: FontWeight.w400,
           fontStyle: FontStyle.normal,
           letterSpacing: 1,
         ),
         decoration: InputDecoration(
           labelText: widget.labelText,
-          // ignore: prefer_const_constructors
-          enabledBorder: OutlineInputBorder(
+          enabledBorder:const OutlineInputBorder(
               borderSide:
-                  const BorderSide(color: Color.fromARGB(178, 158, 158, 158))),
+                   BorderSide(color: Colors.grey)),
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Theme.of(context).primaryColor),
           ),

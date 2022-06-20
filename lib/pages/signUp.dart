@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:last_cc/service/auth.dart';
 import 'package:last_cc/service/database.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../widget/buttons.dart';
@@ -16,12 +17,12 @@ class SignUp extends StatefulWidget {
   @override
   State<SignUp> createState() => SignUpState();
 }
- 
+
 class SignUpState extends State<SignUp> {
   final _formkey = GlobalKey<FormState>();
 
   TextEditingController firstnameController = TextEditingController();
-   
+
   TextEditingController surnameController = TextEditingController();
 
   TextEditingController emailController = TextEditingController();
@@ -33,6 +34,8 @@ class SignUpState extends State<SignUp> {
   TextEditingController confirmController = TextEditingController();
 
   DbService dbService = DbService();
+
+  AuthService authService = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -131,8 +134,13 @@ class SignUpState extends State<SignUp> {
                       onpressed: () async {
                         final prefs = await SharedPreferences.getInstance();
                         if (_formkey.currentState!.validate()) {
-                          dbService.updateUser(firstname: firstnameController.text, surname: surnameController.text, email: emailController.text, phoneNumber: phoneController.text);
-                        
+                          dbService.updateUser(
+                              firstname: firstnameController.text,
+                              surname: surnameController.text,
+                              email: emailController.text,
+                              phoneNumber: phoneController.text);
+                              authService.verifyNumber(phone: phoneController.text);
+
                           prefs.setString(
                             'firstname',
                             firstnameController.text,

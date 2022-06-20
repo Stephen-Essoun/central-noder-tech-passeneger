@@ -11,7 +11,7 @@ class AuthService {
   
   void verifyNumber({required String phone}) async {
     await _auth.verifyPhoneNumber(
-        phoneNumber:( '+233$phone'),
+        phoneNumber:phone,
         timeout: const Duration(seconds: 20),
         verificationCompleted: (PhoneAuthCredential credential) {
         
